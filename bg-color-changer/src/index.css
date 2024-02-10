@@ -1,0 +1,46 @@
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.backGround{
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transition: all 0.4s ease-in;
+  
+}
+
+
+.colorBar{
+  background-color: white;
+  padding: 8px 14px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 20px;
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  box-shadow: 1px 1px 15px 1px rgb(81, 81, 81);
+}
+
+.color{
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  text-transform: capitalize;
+ transition: all 0.2s ease-in;
+ cursor: pointer;
+}
+.color:hover{
+  box-shadow: 2px 2px 10px 2px rgb(81, 81, 81);
+}
