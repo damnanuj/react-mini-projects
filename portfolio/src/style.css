@@ -6,11 +6,16 @@
 *{
 
     margin: 0;
+    font-family: poppins;
+}
+#root{
+    width: fit-content;
+   
 }
 
 .header{
     text-align: center;
-    padding: 10px 0;
+    padding: 5px 0;
     border-bottom: 1px solid gray;
 }
 .body{
@@ -27,7 +32,7 @@
 
 .leftbar-container {
   
-    padding: 20px 0 20px 20px;
+    padding: 10px 20px 10px 20px;
     display: flex;
     flex-direction: column;
     
@@ -56,6 +61,82 @@
 }
 
 .rightbar-container{
-    border: 1px solid red;
-    padding: 20px ;
+    /* border: 1px solid red; */
+    padding: 10px 20px 10px 20px ;
+}
+
+
+
+
+
+/* Left bar */
+
+.experience{
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid gray;
+}
+.exp-card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.experience .exp-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.company-name{
+    
+}
+.duration {
+    text-decoration: underline;
+}
+
+
+.experience ul li{
+    line-height: 1.3;
+    margin-left: -10px;
+}
+.experience .skills , .project-card .tech{
+    display: flex;
+    gap: 1rem;
+   justify-content: flex-end;
+}
+.experience .skills span , .project-card span{
+    background-color: gray;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+
+/* Projects */
+
+.project-heading{
+    width: fit-content;
+    /* border: 1px solid red; */
+    display: flex;
+    gap: 1.3rem;
+    align-items: center;
+}
+
+.project-card{
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid gray;
+    padding: 0 0 20px 0;
+}
+.projects{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* border: 1px solid blueviolet; */
+   
+    border-bottom: 1px solid gray;
 }

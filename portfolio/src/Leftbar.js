@@ -73,8 +73,8 @@ export const Leftbar = () =>{
             <SubSection title="Languages" points={["Java", "JavaScript"]}/>
             <SubSection title="Acheivents" points={["Attending classes","Highest package of the decade", "Firewall cracked and hacked"]}/> */}
             {/* Better not use inline use a seprate object to store data */}
-            <SubSection title="Databases" points={skillsData.languages}/>
-            <SubSection title="Languages" points={skillsData.databases}/>
+            <SubSection title="Languages" points={skillsData.languages}/>
+            <SubSection title="Databases" points={skillsData.databases}/>
             <SubSection title="Frameworks" points={skillsData.frameworks}/>
             <SubSection title="Acheivents" points={skillsData.acheivents}/>
 

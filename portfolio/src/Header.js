@@ -10,7 +10,7 @@
             <h1>Anuj Kumar</h1>
             <div className= "contactDetails"> 
                 <b>Email : anujkrgupta21@gmail.com</b>
-                <b>Mob : +917979746435</b>
+                <b>Mob : +91 7979746435</b>
             </div>
         </div>
     )
