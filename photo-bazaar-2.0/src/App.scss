@@ -5,12 +5,18 @@
 
 .container {
   height: 100vh;
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 11fr 1fr;
   .search-box {
     // border: 1px solid red;
     padding: 10px 20px;
     display: flex;
+    gap: 10px;
     justify-content: center;
     box-shadow: 2px 4px 10px #e7e7e7;
+    
+    top: 0;
     input {
       width: 40vw;
       padding: 10px;
@@ -18,8 +24,25 @@
       outline: none;
       border: 1px solid #e7e7e7;
     }
+    .searchBtn{
+      padding: 0 20px;
+      border-radius: 30px;
+      border: none;
+      background-color: #43bdff;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .searchBtn:active{
+      background-color: #17a2ed;
+    }
   }
   .images-container {
+    margin-top: 10px;
+    // border: 1px solid blue;
+    height: 74vh;
+    overflow-y: scroll;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -84,6 +107,10 @@
   @media (max-width: 600px) {
       .images-container {
         grid-template-columns: repeat(1, 1fr); 
+      }
+      input {
+        width: 40vw;
+       
       }
      
     }
