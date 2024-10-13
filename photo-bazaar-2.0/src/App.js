@@ -1,19 +1,58 @@
+import "./App.scss";
+import { useEffect, useState } from "react";
+import { ImagesList } from "./components/ImagesList";
+import { SearchBox } from "./components/SearchBox";
+import axios from "axios";
+import "material-icons/iconfont/filled.css";
+import "material-icons/iconfont/outlined.css";
 
-import './App.scss';
-import { ImagesList } from './components/ImagesList';
-import { SearchBox } from './components/SearchBox';
-import 'material-icons/iconfont/filled.css';
-import 'material-icons/iconfont/outlined.css';
-import{images} from "./Data"
-import Pagination from './components/Pagination';
-
+import Pagination from "./components/Pagination";
 
 function App() {
+  const [serverResponse, setServerResponse] = useState([]);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("nature");
+  const [apiStatus, setApiStatus] = useState("init");
+
+  const client_id = "imod0hs86tdsCKVb5FJpExDs8UorSYVWG5Zo8QUGx40";
+
+  const updateSearchQuery = (newSearchQuery) => {
+    setSearchQuery(newSearchQuery);
+    setPageNumber(1);
+  };
+
+  useEffect(() => {
+    setApiStatus("pending");
+    (async function () {
+      try {
+        const response = await axios({
+          method: "GET",
+          url: `https://api.unsplash.com/search/photos`,
+          params: {
+            page: pageNumber,
+            query: searchQuery,
+            client_id: client_id,
+          },
+        });
+        setServerResponse(response.data.results);
+        setApiStatus("success");
+      } catch (error) {
+        setApiStatus("error");
+        alert("something went wrong");
+        console.log(error);
+      }
+    })();
+  }, [searchQuery, pageNumber]);
+
   return (
     <div className="container">
-        <SearchBox/>
-        <ImagesList images={images.results}/>
-        <Pagination/>
+      <SearchBox updateSearchQuery={updateSearchQuery} apiStatus={apiStatus} />
+      <ImagesList images={serverResponse} />
+      <Pagination
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+        apiStatus={apiStatus}
+      />
     </div>
   );
 }

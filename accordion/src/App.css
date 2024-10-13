@@ -1,0 +1,58 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #848484;
+}
+
+.accordionContainer {
+  width: 600px;
+  padding: 1rem;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff0000;
+  }
+}
+
+.accordion {
+  margin-bottom: 5px;
+  background-color: #ffff84;
+  border-radius: 10px;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: brown;
+    transition: color 0.4s ease-in-out;
+  }
+}
+
+.active h2 {
+  font-weight: 700;
+  color: #d51414;
+}
+
+.content {
+  max-height: 0;
+  color: #440d0d;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.content.active {
+  max-height: 500px;
+  opacity: 1;
+}
