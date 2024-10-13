@@ -8,13 +8,14 @@ import "material-icons/iconfont/outlined.css";
 
 import Pagination from "./components/Pagination";
 
+
 function App() {
   const [serverResponse, setServerResponse] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
   const [searchQuery, setSearchQuery] = useState("nature");
   const [apiStatus, setApiStatus] = useState("init");
 
-  const client_id = "imod0hs86tdsCKVb5FJpExDs8UorSYVWG5Zo8QUGx40";
+  const client_id = process.env.REACT_APP_UNSPLASH_ACCESS_KEY;
 
   const updateSearchQuery = (newSearchQuery) => {
     setSearchQuery(newSearchQuery);
